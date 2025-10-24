@@ -8,7 +8,7 @@ app = Flask(__name__)
 # ---- ĐỊA CHỈ CÔNG TY CỐ ĐỊNH ----
 COMPANY_ADDRESS = "東京都世田谷区桜上水4-7-5"
 # Google Maps API Key (bạn cần tạo 1 key miễn phí tại https://console.cloud.google.com/)
-GOOGLE_API_KEY = "YOUR_GOOGLE_MAPS_API_KEY"
+GOOGLE_API_KEY = "AIzaSyAND5r7rjGzT_b3nkSowZJ4gdzN-pMFoD8"
 
 # Hàm chuyển địa chỉ thành tọa độ
 def get_latlon(address):
