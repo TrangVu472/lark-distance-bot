@@ -13,10 +13,16 @@ GOOGLE_API_KEY = "AIzaSyAND5r7rjGzT_b3nkSowZJ4gdzN-pMFoD8"
 # Hàm chuyển địa chỉ thành tọa độ
 def get_latlon(address):
     url = "https://maps.googleapis.com/maps/api/geocode/json"
-    params = {"address": address, "key": GOOGLE_API_KEY}
+    params = {
+        "address": address, 
+        "key": GOOGLE_API_KEY,
+        "language": "ja",  # ⚡ thêm ngôn ngữ Nhật
+        "region": "jp"
+    }
     res = requests.get(url, params=params).json()
     if not res["results"]:
         return None, None
+    print(f"Geocode for {address}: {res['results'][0]['formatted_address']}")
     loc = res["results"][0]["geometry"]["location"]
     return loc["lat"], loc["lng"]
 
